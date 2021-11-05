@@ -1,3 +1,7 @@
+///Nesta bateria de testes realizo a verifica√ß√£o de todos os itens obrigat√≥rios no sistema, validando se est√£o funcionando de forma correta.
+
+
+
 package seleniumcurso;
 
 import org.junit.Assert;
@@ -8,9 +12,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class TesteItensObrigatÛrios {
+public class TesteItensObrigat√≥rios {
 	@Test
-	public void testeNomeObrigatÛrio () {
+	public void testeNomeObrigat√≥rio () {
 		
 		   
 		
@@ -24,7 +28,7 @@ public class TesteItensObrigatÛrios {
 
 
 	@ Test
-	 public void ValidarSobreNomeObrigatÛrio () {
+	 public void ValidarSobreNomeObrigat√≥rio () {
 	 WebDriver driver = new ChromeDriver();
 	 driver.get("file:" + System.getProperty("user.dir") + "/src/main/resources/componentes.html");
 	 
@@ -50,7 +54,7 @@ public class TesteItensObrigatÛrios {
 		 driver.findElement(By.id("elementosForm:cadastrar")).click(); //clica em cadastrar
 		 Alert alert = driver.switchTo().alert(); //altera o foco
 	   	
-		 Assert.assertEquals("Sexo eh obrigatorio", alert.getText()); //assert equals para ver se ele est· solicitando o item obrigatorio
+		 Assert.assertEquals("Sexo eh obrigatorio", alert.getText()); //assert equals para ver se ele est√° solicitando o item obrigatorio
 		    
 		
 		
@@ -60,9 +64,9 @@ public class TesteItensObrigatÛrios {
 			WebDriver driver = new ChromeDriver();
 			driver.get("file:" + System.getProperty("user.dir") + "/src/main/resources/componentes.html");
 			
-			driver.findElement(By.id("elementosForm:nome")).sendKeys("teste"); //item obrigatÛrio preencher
-			driver.findElement(By.id("elementosForm:sobrenome")).sendKeys("teste2"); //item obrigatÛrio preencher
-			driver.findElement(By.id("elementosForm:sexo:0")).click(); //item obrigatÛrio preencher
+			driver.findElement(By.id("elementosForm:nome")).sendKeys("teste"); //item obrigat√≥rio preencher
+			driver.findElement(By.id("elementosForm:sobrenome")).sendKeys("teste2"); //item obrigat√≥rio preencher
+			driver.findElement(By.id("elementosForm:sexo:0")).click(); //item obrigat√≥rio preencher
 			
 			driver.findElement(By.id("elementosForm:comidaFavorita:0")).click(); //seleciona carne
 			driver.findElement(By.id("elementosForm:comidaFavorita:3")).click(); //seleciona vegetariana
@@ -70,7 +74,7 @@ public class TesteItensObrigatÛrios {
 			driver.findElement(By.id("elementosForm:cadastrar")).click(); //clica no boyao
 			Alert alert = driver.switchTo().alert(); //altera o foco
 			
-			Assert.assertEquals("Tem certeza que voce eh vegetariano?", alert.getText()); //verifica a mensagem de mal uso do usu·rio
+			Assert.assertEquals("Tem certeza que voce eh vegetariano?", alert.getText()); //verifica a mensagem de mal uso do usu√°rio
 			
 
 
@@ -82,20 +86,20 @@ public class TesteItensObrigatÛrios {
 			WebDriver driver = new ChromeDriver();
 			driver.get("file:" + System.getProperty("user.dir") + "/src/main/resources/componentes.html");
 			
-			driver.findElement(By.id("elementosForm:nome")).sendKeys("teste"); //item obrigatÛrio preencher
-			driver.findElement(By.id("elementosForm:sobrenome")).sendKeys("teste2"); //item obrigatÛrio preencher
-			driver.findElement(By.id("elementosForm:sexo:0")).click(); //item obrigatÛrio preencher
+			driver.findElement(By.id("elementosForm:nome")).sendKeys("teste"); //item obrigat√≥rio preencher
+			driver.findElement(By.id("elementosForm:sobrenome")).sendKeys("teste2"); //item obrigat√≥rio preencher
+			driver.findElement(By.id("elementosForm:sexo:0")).click(); //item obrigat√≥rio preencher
 			
 			driver.findElement(By.id("elementosForm:comidaFavorita:0")).click(); //seleciona carne
 			
-			Select combo = new Select (driver.findElement(By.id("elementosForm:esportes"))); //abre o combo de selecıes
+			Select combo = new Select (driver.findElement(By.id("elementosForm:esportes"))); //abre o combo de selec√µes
 			combo.selectByVisibleText("Futebol"); //seleciona esporte
-			combo.selectByVisibleText("O que eh esporte?"); //e seleciona que n sabe oq È
+			combo.selectByVisibleText("O que eh esporte?"); //e seleciona que n sabe oq √©
 			
 			driver.findElement(By.id("elementosForm:cadastrar")).click(); //clica no boyao
 			Alert alert = driver.switchTo().alert(); //altera o foco
 			
-			Assert.assertEquals("Voce faz esporte ou nao?", alert.getText()); //verifica a mensagem de mal uso do usu·rio
+			Assert.assertEquals("Voce faz esporte ou nao?", alert.getText()); //verifica a mensagem de mal uso do usu√°rio
 			
 			
 			
